@@ -2,10 +2,10 @@
 	"name": "aimi",
 	"version": "0.1.0",
 	"description": "An Electron App",
-	"main": "main.js",
+	"main": "script/main.js",
 	"scripts": {
 		"start": "npm run dev",
-		"dev": "electron script/main.js"
+		"dev": "electron ."
 	},
 	"repository": {
 		"type": "git",
