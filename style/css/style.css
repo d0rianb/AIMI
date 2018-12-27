@@ -16,14 +16,17 @@ body {
 }
 
 .container {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 9fr 3fr;
-  grid-template-rows: 1fr 18fr 1fr;
-  grid-template-areas: "dock status-bar aside" "dock main aside" "dock bottom-bar aside";
+  grid-auto-columns: 4em 4fr auto;
+  grid-template-rows: 2em auto 3em;
+  grid-template-areas: "dock status-bar notification" "dock main notification" "dock bottom-bar notification";
+  place-items: stretch;
 }
 .container > div {
+  display: flex;
   background-color: #516676;
   border: 0.5px solid #fff;
 }
@@ -40,12 +43,20 @@ body {
   grid-area: main;
 }
 
-.aside {
-  grid-area: aside;
+.notification {
+  grid-area: notification;
+  position: absolute;
+  width: 20vw;
+  height: 100vh;
+  right: -20vw;
+}
+.notification-open {
+  right: 0;
+  transition: right 200ms cubic-bezier(0.4, 0, 1, 1);
 }
 
 .bottom-bar {
   grid-area: bottom-bar;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */
