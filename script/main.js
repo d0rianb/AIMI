@@ -1,5 +1,6 @@
 const electron = require('electron')
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+const notification = require('./notification')
 
 let win
 

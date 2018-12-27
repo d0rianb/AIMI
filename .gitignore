@@ -4,4 +4,4 @@ node_modules/
 !/.gitignore
 
 package-lock.json
-main.css.map
+*.css.map
