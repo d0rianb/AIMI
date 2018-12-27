@@ -5,7 +5,7 @@
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
-		"dev": "nodemon ."
+		"dev": "electron ."
 	},
 	"repository": {
 		"type": "git",
@@ -17,5 +17,8 @@
 	"bugs": {
 		"url": "https://github.com/d0rianb/AIMI/issues"
 	},
-	"homepage": "https://github.com/d0rianb/AIMI#readme"
+	"homepage": "https://github.com/d0rianb/AIMI#readme",
+	"devDependencies": {
+		"electron": "^3.0.5"
+	}
 }
