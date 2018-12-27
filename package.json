@@ -4,14 +4,16 @@
 	"description": "An Electron App",
 	"main": "main.js",
 	"scripts": {
-		"start": "electron .",
-		"dev": "electron ."
+		"start": "npm run dev",
+		"dev": "electron script/main.js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/d0rianb/AIMI.git"
 	},
-	"keywords": ["AIMI"],
+	"keywords": [
+		"AIMI"
+	],
 	"author": "D0rian",
 	"license": "MIT",
 	"bugs": {
