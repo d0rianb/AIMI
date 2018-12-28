@@ -15,6 +15,7 @@ body {
     font-size: 2vh;
     color: #CBCBCB;
     background-color: #424242;
+    overflow: hidden;
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-auto-columns: 4em 4fr auto;
+    grid-auto-columns: 4.5em 4fr auto;
     grid-template-rows: 2em auto 3em;
     grid-template-areas: "dock status-bar notification" "dock main notification" "dock bottom-bar notification";
     place-items: stretch;

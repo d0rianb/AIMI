@@ -1,13 +1,18 @@
 const electron = require('electron')
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain } = electron
 const notification = require('./notification')
+const keyboard = require('./keyboard')
 
 let win
 
 app.on('ready', () => {
 	let { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
 
-	win = new BrowserWindow({ width: width, height: height })
+	win = new BrowserWindow({
+		width: width,
+		height: height,
+		titleBarStyle: 'hiddenInset'
+	})
 	win.maximize()
 	win.center()
 	win.setBackgroundColor('#424242')

@@ -2,8 +2,15 @@ const electron = require('electron')
 const { ipcRenderer } = electron
 
 // Renderer Side
+const container = document.querySelector('.container')
 const main = document.querySelector('.main')
 const canvas = document.querySelector('.canvas')
+
+document.onkeydown = e => {
+	let key = (e.key == 'Dead') ? e.code : e.key
+	ipcRenderer.send('keypress', key, e.shiftKey)
+	console.log(e);
+}
 
 function mainCanvas(sketch) {
 	sketch.setup = function() {
