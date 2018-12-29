@@ -14,7 +14,7 @@ body {
     font-weight: 400;
     font-size: 2vh;
     color: #CBCBCB;
-    background-color: #424242;
+    background-color: $bg-color;
     overflow: hidden;
 }
 
@@ -30,7 +30,7 @@ body {
 
     & > div {
         display: flex;
-        background-color: #516676;
+        background-color: $bg-color;
         border: 0.5px solid #fff;
     }
 
@@ -52,12 +52,25 @@ body {
     grid-area: main;
 }
 
-.notification {
+.notification-pannel {
     grid-area: notification;
     position: absolute;
+    display: flex;
+    flex-flow: column;
     width: 20vw;
     height: 100vh;
     right: -20vw;
+    padding: 0.25 0.5em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &:after {
+        font-family: "FontAwesome";
+        position: absolute;
+        top: 50vh;
+        content: '>'; // \f101
+        color: $blue-grey-50;
+    }
 
     &-open {
         right: 0;

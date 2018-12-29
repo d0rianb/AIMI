@@ -1,3 +1,45 @@
-
+/* Colors */
+/* Main Theme */
+.notif {
+  display: flex;
+  flex-flow: column;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 5em;
+  height: max-content;
+  background-color: #455A64;
+  margin: 0.25em;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.notif-title {
+  font-size: 1.25em;
+  color: rgba(255, 255, 255, 0.9);
+}
+.notif-content {
+  font-size: 0.75em;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.7);
+}
+.notif-actions {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.notif-actions > button {
+  -webkit-appearance: caret;
+  cursor: pointer;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+  margin: 0.25em 0.1em 0;
+  padding: 0.5em;
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: 1px 1px 0.5px rgba(38, 50, 56, 0.5);
+  background-color: #37474F;
+}
+.notif-actions > button:focus {
+  outline: none;
+}
 
 /*# sourceMappingURL=widget.css.map */

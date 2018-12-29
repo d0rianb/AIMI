@@ -1,3 +1,5 @@
+/* Colors */
+/* Main Theme */
 *,
 *::after,
 *::before {
@@ -12,7 +14,7 @@ body {
   font-weight: 400;
   font-size: 2vh;
   color: #CBCBCB;
-  background-color: #424242;
+  background-color: #37474F;
   overflow: hidden;
 }
 
@@ -28,7 +30,7 @@ body {
 }
 .container > div {
   display: flex;
-  background-color: #516676;
+  background-color: #37474F;
   border: 0.5px solid #fff;
 }
 .container .canvas {
@@ -48,14 +50,26 @@ body {
   grid-area: main;
 }
 
-.notification {
+.notification-pannel {
   grid-area: notification;
   position: absolute;
+  display: flex;
+  flex-flow: column;
   width: 20vw;
   height: 100vh;
   right: -20vw;
+  padding: 0.25 0.5em;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-.notification-open {
+.notification-pannel:after {
+  font-family: "FontAwesome";
+  position: absolute;
+  top: 50vh;
+  content: ">";
+  color: #ECEFF1;
+}
+.notification-pannel-open {
   right: 0;
   transition: right 200ms cubic-bezier(0.4, 0, 1, 1);
 }

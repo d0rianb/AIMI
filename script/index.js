@@ -19,7 +19,7 @@ function mainCanvas(sketch) {
 	}
 
 	sketch.draw = function() {
-		sketch.background('#516676')
+		sketch.background('#37474F')
 		sketch.stroke('#11111')
 		sketch.line(sketch.mouseX, 0, sketch.mouseX, main.offsetHeight)
 		sketch.line(0, sketch.mouseY, main.offsetWidth, sketch.mouseY)

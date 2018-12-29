@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+.notif {
+    display: flex;
+    flex-flow: column;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: 5em;
+    height: max-content;
+    background-color: $fg-color;
+    margin: 0.25em;
+    padding: 0.5em;
+    border-radius: 5px;
+
+    &-title {
+        font-size: 1.25em;
+        color: $white-darker;
+    }
+
+    &-content {
+        font-size: 0.75em;
+        text-align: justify;
+        color: $white-dark;
+    }
+
+    &-actions {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & > button {
+            -webkit-appearance: caret;
+            cursor: pointer;
+            border-radius: 5px;
+            width: -webkit-fill-available;
+            margin: 0.25em 0.1em 0;
+            padding: 0.5em;
+            color: $white-dark;
+            box-shadow: 1px 1px 0.5px rgba($blue-grey-900, .5);
+            background-color: $blue-grey-800;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
