@@ -1,6 +1,7 @@
 const electron = require('electron')
-const { app, BrowserWindow, ipcMain } = electron
+const { app, BrowserWindow, ipcMain, Menu } = electron
 const notification = require('./notification')
+const { menuTemplate } = require('./menu')
 const keyboard = require('./keyboard')
 
 let win
@@ -13,6 +14,10 @@ app.on('ready', () => {
 		height: height,
 		titleBarStyle: 'hiddenInset'
 	})
+
+	const appMenu = Menu.buildFromTemplate(menuTemplate)
+	Menu.setApplicationMenu(appMenu)
+
 	win.maximize()
 	win.center()
 	win.setBackgroundColor('#424242')
@@ -25,6 +30,8 @@ app.on('ready', () => {
 		win = null
 	})
 })
+
+
 app.on('window-all-closed', () => {
 	app.quit()
 })

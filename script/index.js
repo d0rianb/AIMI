@@ -7,6 +7,7 @@ const main = document.querySelector('.main')
 const canvas = document.querySelector('.canvas')
 
 document.onkeydown = e => {
+	e.preventDefault()
 	let key = (e.key == 'Dead') ? e.code : e.key
 	ipcRenderer.send('keypress', key, e.shiftKey)
 	console.log(e);

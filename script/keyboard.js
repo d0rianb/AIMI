@@ -92,6 +92,8 @@ if (keyboardControl) {
 			}
 		} else if (key == 'Enter') {
 			robot.mouseClick()
+		} else if (key == 'Space') {
+			//Scroll
 		} else {
 			let offset = isShifted ? 10 : 30
 			if (key == 'ArrowUp') { robot.moveMouseSmooth(x, y - offset) }
