@@ -1,10 +1,17 @@
 const electron = require('electron')
 const { app, BrowserWindow, ipcMain, Menu } = electron
+
+const packagejson = require('../package.json');
 const notification = require('./notification')
 const { menuTemplate } = require('./menu')
 const keyboard = require('./keyboard')
 
 let win
+
+app.setAboutPanelOptions({
+	applicationName: 'AIMI',
+	applicationVersion: packagejson.version
+})
 
 app.on('ready', () => {
 	let { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
@@ -25,6 +32,7 @@ app.on('ready', () => {
 
 	win.on('resize', () => {
 		[width, height] = win.getSize()
+		win.reload()
 	})
 	win.on('closed', () => {
 		win = null
@@ -34,9 +42,4 @@ app.on('ready', () => {
 
 app.on('window-all-closed', () => {
 	app.quit()
-})
-app.on('activate', () => {
-	if (win === null) {
-		init()
-	}
 })
