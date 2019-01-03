@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+</head>
+
+<body style="margin:0"></body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+    const {
+        ipcRenderer
+    } = require('electron')
+    document.onkeydown = e => {
+        e.preventDefault()
+        let key = (e.key == 'Dead') ? e.code : e.key
+        ipcRenderer.send('keypress', key, e.shiftKey)
+        console.log(e);
+    }
+    const yLength = {
+        0: 13,
+        1: 12,
+        2: 12,
+        3: 11
+    }
+
+
+
+    function setup() {
+        let canvas = createCanvas(window.innerWidth, window.innerHeight)
+        let size = 20
+        background('rgba(200,200,0, 0.25)')
+        for (let i = 0; i < 4; i++) {
+            line(0, i * height / 4, width, i * height / 4)
+            let nbCells = yLength[i]
+            let offsetX = (width / (2 * nbCells))
+            let offsetY = height / 8
+            for (let j = 0; j < nbCells; j++) {
+
+                line((j * width / nbCells) + offsetX,
+                    (i * height / 4) + offsetY - size,
+                    (j * width / nbCells) + offsetX,
+                    (i * height / 4) + offsetY + size)
+
+                line((j * width / nbCells) + offsetX - size,
+                    (i * height / 4) + offsetY,
+                    (j * width / nbCells) + offsetX + size,
+                    (i * height / 4) + offsetY)
+            }
+        }
+    }
+</script>
+
+</html>

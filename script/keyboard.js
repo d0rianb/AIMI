@@ -77,9 +77,9 @@ if (keyboardControl) {
 		let { x, y } = robot.getMousePos()
 		if (keyToPos.hasOwnProperty(key)) {
 			let mouseX = keyToPos[key].x * windowWidth / yLength[keyToPos[key].y]
-			let mouseY = keyToPos[key].y * windowHeight / 4
+			let mouseY = windowY + keyToPos[key].y * windowHeight / 4
 			let offsetX = (windowWidth / yLength[keyToPos[key].y]) / 2
-			let offsetY = windowWidth / 8
+			let offsetY = windowY + windowHeight / 8
 			robot.setMouseDelay(3)
 			let deltaX = mouseX + offsetX - x
 			let deltaY = mouseY + offsetY - y
@@ -88,7 +88,6 @@ if (keyboardControl) {
 				x = robot.getMousePos().x
 				y = robot.getMousePos().y
 				robot.moveMouse(x + deltaX / step, y + deltaY / step)
-				console.log(x + deltaX / step, y + deltaY / step)
 			}
 		} else if (key == 'Enter') {
 			robot.mouseClick()

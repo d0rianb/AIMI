@@ -6,12 +6,17 @@ const notification = require('./notification')
 const { menuTemplate } = require('./menu')
 const keyboard = require('./keyboard')
 
+const debug = true
+
 let win
 
 app.setAboutPanelOptions({
 	applicationName: 'AIMI',
 	applicationVersion: packagejson.version
 })
+
+/* Transparent Window with grid to help styling */
+let gridWin
 
 app.on('ready', () => {
 	let { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
@@ -21,6 +26,18 @@ app.on('ready', () => {
 		height: height,
 		titleBarStyle: 'hiddenInset'
 	})
+
+	if (debug) {
+		gridWin = new BrowserWindow({
+			width: width,
+			height: height,
+			titleBarStyle: 'normal',
+			transparent: true,
+			frame: true
+		})
+		gridWin.maximize()
+		gridWin.loadFile('grid.html')
+	}
 
 	const appMenu = Menu.buildFromTemplate(menuTemplate)
 	Menu.setApplicationMenu(appMenu)
